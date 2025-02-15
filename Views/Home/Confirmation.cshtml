@@ -1,2 +1,12 @@
 <h2>Data successfully recorded</h2>
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Movies">Return</a>
+
+<!-- Link with classes applied to style it like a traditional link -->
+<a class="nav-link text-dark" 
+   asp-area="" 
+   asp-controller="Home" 
+   asp-action="Movies" 
+   style="color: blue; text-decoration: underline;"
+    onmouseover="this.style.color='red'; this.style.textDecoration='none';"
+    onmouseout="this.style.color='blue'; this.style.textDecoration='underline';">  <!-- Revert changes when the mouse leaves the link -->
+    Return
+</a>

@@ -1,30 +1,50 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character set and viewport for responsive design -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Title of the page dynamically set from the ViewData in the controller -->
     <title>@ViewData["Title"] - JoelHiltonMovies</title>
+
+    <!-- Linking to Bootstrap CSS for styling -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    
+    <!-- Custom CSS for site styling -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    
+    <!-- Custom styling for the JoelHiltonMovies project -->
     <link rel="stylesheet" href="~/JoelHiltonMovies.styles.css" asp-append-version="true"/>
 </head>
 <body>
 <header>
+    <!-- Navigation bar with links to the main sections of the site -->
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
+            <!-- Brand name that links to the Home page -->
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">JoelHiltonMovies</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+
+            <!-- Toggler for mobile view, shows when screen size is smaller -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" 
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Navbar menu with links to different pages (Home, GetToKnowJoel, Movies) -->
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
+                    <!-- Home link -->
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
+                    
+                    <!-- Get To Know Joel link -->
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GetToKnowJoel">Get To Know Joel</a>
                     </li>
+                    
+                    <!-- Movies link -->
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Movies">Movies</a>
                     </li>
@@ -33,20 +53,27 @@
         </div>
     </nav>
 </header>
+
+<!-- Main content area where the body of each page will be injected -->
 <div class="container">
     <main role="main" class="pb-3">
-        @RenderBody()
+        @RenderBody() <!-- This renders the view content passed from the controller -->
     </main>
 </div>
 
+<!-- Footer with the copyright information -->
 <footer class="border-top footer text-muted">
     <div class="container">
         &copy; 2025 - JoelHiltonMovies
     </div>
 </footer>
+
+<!-- Including the necessary JavaScript libraries -->
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
+
+<!-- Rendering any additional scripts added in specific views -->
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

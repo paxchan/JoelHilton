@@ -2,56 +2,69 @@
 
 <h1>Movie Database</h1>
 
+<!-- The form section where the user will input movie information. -->
 <div class="form-body">
-    <form method="post">
-        <label asp-for="Category">Category:</label>
-        <input asp-for="Category" class="form-control"/>
-        <span asp-validation-for="Category" class="text-danger"></span>
+    <form method="post">  <!-- 'method="post"' ensures the form sends data to the server when submitted -->
+
+        <!-- Category input field -->
+        <label asp-for="Category">Category:</label>  <!-- 'asp-for' links the label to the 'Category' property of the model -->
+        <input asp-for="Category" class="form-control"/>  <!-- The input field for 'Category' -->
+        <span asp-validation-for="Category" class="text-danger"></span>  <!-- Displays validation error for 'Category' if there is any -->
         <br/>
 
+        <!-- Title input field -->
         <label asp-for="Title">Title:</label>
         <input asp-for="Title" class="form-control"/>
         <span asp-validation-for="Title" class="text-danger"></span>
         <br/>
 
+        <!-- Year input field with validation for numeric range -->
         <label asp-for="Year">Year:</label>
-        <input asp-for="Year" type="number" class="form-control" min="1888" max="2025"/>
+        <input asp-for="Year" type="number" class="form-control" min="1888" max="2025"/>  <!-- Specifies a range for movie years -->
         <span asp-validation-for="Year" class="text-danger"></span>
         <br/>
 
+        <!-- Director input field -->
         <label asp-for="Director">Director:</label>
         <input asp-for="Director" class="form-control"/>
         <span asp-validation-for="Director" class="text-danger"></span>
         <br/>
 
+        <!-- Rating dropdown menu for selecting movie ratings -->
         <label asp-for="Rating">Rating:</label>
         <select asp-for="Rating" class="form-control">
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
+            <option value="G">G</option>  <!-- G-rated movies -->
+            <option value="PG">PG</option>  <!-- PG-rated movies -->
+            <option value="PG-13">PG-13</option>  <!-- PG-13 rated movies -->
+            <option value="R">R</option>  <!-- R-rated movies -->
         </select>
         <span asp-validation-for="Rating" class="text-danger"></span>
         <br/>
-        
+
+        <!-- Edited checkbox for whether the movie is edited -->
         <input asp-for="Edited" type="checkbox"/>
-        <label asp-for="Edited">Edited</label>
+        <label asp-for="Edited">Edited</label>  <!-- The label for the checkbox -->
         <span asp-validation-for="Edited" class="text-danger"></span>
         <br/>
 
+        <!-- Lent input field -->
         <label asp-for="Lent">Lent to:</label>
         <input asp-for="Lent" class="form-control"/>
         <span asp-validation-for="Lent" class="text-danger"></span>
         <br/>
 
+        <!-- Notes input field with a maxlength restriction -->
         <label asp-for="Notes">Notes:</label>
-        <input asp-for="Notes" class="form-control" maxlength="25"/>
+        <input asp-for="Notes" class="form-control" maxlength="25"/>  <!-- Restricts notes to 25 characters -->
         <span asp-validation-for="Notes" class="text-danger"></span>
         <br/>
 
+        <!-- Submit button for the form -->
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
+<!-- This section includes validation scripts for the form -->
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <partial name="_ValidationScriptsPartial" />  <!-- This partial view is used to include client-side validation scripts -->
 }
