@@ -265,3 +265,4 @@
 /Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/obj/Debug/net8.0/JoelHiltonMovies.pdb
 /Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/obj/Debug/net8.0/JoelHiltonMovies.genruntimeconfig.cache
 /Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/obj/Debug/net8.0/ref/JoelHiltonMovies.dll
+/Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/bin/Debug/net8.0/global.json
