@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/test/RiderProjects/JoelHiltonMovies/JoelHiltonMovies/JoelHiltonMovies.csproj": {}
+    "/Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/JoelHiltonMovies.csproj": {}
   },
   "projects": {
-    "/Users/test/RiderProjects/JoelHiltonMovies/JoelHiltonMovies/JoelHiltonMovies.csproj": {
+    "/Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/JoelHiltonMovies.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/test/RiderProjects/JoelHiltonMovies/JoelHiltonMovies/JoelHiltonMovies.csproj",
+        "projectUniqueName": "/Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/JoelHiltonMovies.csproj",
         "projectName": "JoelHiltonMovies",
-        "projectPath": "/Users/test/RiderProjects/JoelHiltonMovies/JoelHiltonMovies/JoelHiltonMovies.csproj",
+        "projectPath": "/Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/JoelHiltonMovies.csproj",
         "packagesPath": "/Users/test/.nuget/packages/",
-        "outputPath": "/Users/test/RiderProjects/JoelHiltonMovies/JoelHiltonMovies/obj/",
+        "outputPath": "/Users/test/RiderProjects/JoelHilton/JoelHiltonMovies/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/test/.nuget/NuGet/NuGet.Config"
