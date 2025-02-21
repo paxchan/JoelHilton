@@ -1,0 +1,17 @@
+<!-- The model passed to the view is a single Movie object -->
+@model Movie
+
+<h2>Confirm Deletion</h2>  <!-- Page heading -->
+<h3>@Model.Title, @Model.Year</h3>  <!-- Display the movie title and year -->
+
+<!-- Form to confirm deletion -->
+<form asp-controller="Home" asp-action="Delete" method="post">
+    <!-- Hidden input to store the MovieId, so it can be sent with the form submission -->
+    <input type="hidden" asp-for="MovieId"/>
+    
+    <!-- Submit button to confirm and delete the movie -->
+    <button type="submit">Delete</button>
+
+    <!-- Cancel button: Redirects back to the MovieDatabase page without deleting -->
+    <a class="btn btn-info" asp-controller="Home" asp-action="MovieDatabase">Cancel</a>
+</form>

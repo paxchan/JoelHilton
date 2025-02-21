@@ -28,3 +28,46 @@ form {
 .form-body {
   max-width: 500px;
 }
+
+/* Fix table layout issues */
+.table-fixed {
+  width: 100%;
+  table-layout: auto; /* Auto-adjust column widths */
+  border-collapse: collapse; /* Ensure proper spacing */
+}
+
+/* Allow table body to scroll while keeping headers fixed */
+.table-fixed thead {
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: left;
+}
+
+.table-fixed thead th,
+.table-fixed tbody td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  word-wrap: break-word; /* Allow content to wrap */
+  white-space: normal; /* Let text flow onto new lines */
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+/* Set custom widths for columns */
+.table-fixed th:nth-child(1), .table-fixed td:nth-child(1) { width: 20%; } /* Movie Title */
+.table-fixed th:nth-child(2), .table-fixed td:nth-child(2) { width: 12%; } /* Category */
+.table-fixed th:nth-child(3), .table-fixed td:nth-child(3) { width: 6%; }  /* Year */
+.table-fixed th:nth-child(4), .table-fixed td:nth-child(4) { width: 15%; } /* Director */
+.table-fixed th:nth-child(5), .table-fixed td:nth-child(5) { width: 6%; }  /* Rating */
+.table-fixed th:nth-child(6), .table-fixed td:nth-child(6) { width: 6%; }  /* Edited */
+.table-fixed th:nth-child(7), .table-fixed td:nth-child(7) { width: 10%; } /* Lent To */
+.table-fixed th:nth-child(8), .table-fixed td:nth-child(8) { width: 10%; } /* Copied To Plex */
+.table-fixed th:nth-child(9), .table-fixed td:nth-child(9) { width: 15%; } /* Notes */
+.table-fixed th:nth-child(10), .table-fixed td:nth-child(10),
+.table-fixed th:nth-child(11), .table-fixed td:nth-child(11) { width: 10%; } /* Edit/Delete */
+
+.table-responsive {
+  overflow-x: auto;
+}

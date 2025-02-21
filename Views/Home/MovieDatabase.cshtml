@@ -1,0 +1,48 @@
+<!-- Model passed to the view: A list of Movie objects -->
+@model List<Movie>
+
+<div class="table-responsive"> <!-- Makes the table scrollable on smaller screens -->
+    <table class="table table-fixed"> <!-- Bootstrap-styled table with fixed layout -->
+        <thead>
+        <tr> <!-- Table header row -->
+            <th scope="col">Movie Title</th>
+            <th scope="col">Category</th>
+            <th scope="col">Year</th>
+            <th scope="col">Director</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Edited</th>
+            <th scope="col">Lent To</th>
+            <th scope="col">Copied To Plex</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Edit</th>  <!-- Column for the edit button -->
+            <th scope="col">Delete</th>  <!-- Column for the delete button -->
+        </tr>
+        </thead>
+
+        <tbody>
+        <!-- Loop through each Movie object in the list -->
+        @foreach (var x in Model)
+        {
+            <tr> <!-- Table row for each movie entry -->
+                <td>@x.Title</td> <!-- Displays movie title -->
+                <td>@x.Category?.CategoryName</td> <!-- Displays category name if available -->
+                <td>@x.Year</td> <!-- Displays release year -->
+                <td>@x.Director</td> <!-- Displays director's name -->
+                <td>@x.Rating</td> <!-- Displays movie rating -->
+                <td>@x.Edited</td> <!-- Indicates if the movie has been edited -->
+                <td>@x.LentTo</td> <!-- Shows to whom the movie was lent -->
+                <td>@x.CopiedToPlex</td> <!-- Indicates if the movie was copied to Plex -->
+                <td>@x.Notes</td> <!-- Displays additional notes -->
+                <td>
+                    <!-- Edit button, navigates to Edit action in Home controller with movie ID -->
+                    <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a>
+                </td>
+                <td>
+                    <!-- Delete button, navigates to Delete action in Home controller with movie ID -->
+                    <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

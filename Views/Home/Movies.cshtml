@@ -1,23 +1,29 @@
 @model Movie
 
-<h1>Movie Database</h1>
+<h1>Add Movie</h1>
 
 <!-- The form section where the user will input movie information. -->
 <div class="form-body">
     <form method="post">  <!-- 'method="post"' ensures the form sends data to the server when submitted -->
 
-        <!-- Category input field -->
-        <label asp-for="Category">Category:</label>  <!-- 'asp-for' links the label to the 'Category' property of the model -->
-        <input asp-for="Category" class="form-control"/>  <!-- The input field for 'Category' -->
-        <span asp-validation-for="Category" class="text-danger"></span>  <!-- Displays validation error for 'Category' if there is any -->
-        <br/>
-
+        <input type="hidden" asp-for="MovieId" />
+        
         <!-- Title input field -->
         <label asp-for="Title">Title:</label>
         <input asp-for="Title" class="form-control"/>
         <span asp-validation-for="Title" class="text-danger"></span>
         <br/>
-
+        
+        <!-- Category input field -->
+        <select asp-for="CategoryId">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryId">@c.CategoryName</option>
+            }
+        </select>
+        <br/>
+        
         <!-- Year input field with validation for numeric range -->
         <label asp-for="Year">Year:</label>
         <input asp-for="Year" type="number" class="form-control" min="1888" max="2025"/>  <!-- Specifies a range for movie years -->
@@ -48,9 +54,14 @@
         <br/>
 
         <!-- Lent input field -->
-        <label asp-for="Lent">Lent to:</label>
-        <input asp-for="Lent" class="form-control"/>
-        <span asp-validation-for="Lent" class="text-danger"></span>
+        <label asp-for="LentTo">Lent to:</label>
+        <input asp-for="LentTo" class="form-control"/>
+        <span asp-validation-for="LentTo" class="text-danger"></span>
+        <br/>
+
+        <input asp-for="CopiedToPlex" type="checkbox"/>
+        <label asp-for="CopiedToPlex">Copied To Plex</label>  <!-- The label for the checkbox -->
+        <span asp-validation-for="CopiedToPlex" class="text-danger"></span>
         <br/>
 
         <!-- Notes input field with a maxlength restriction -->
